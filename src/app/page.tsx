@@ -6,8 +6,9 @@ import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import {
-  GitHubIcon,
+  InstagramIcon,
   LinkedInIcon,
+  SubstackIcon,
   TwitterIcon,
 } from '@/components/SocialIcons'
 // import logoHaulr from '@/images/logos/haulr.jpg'
@@ -15,7 +16,7 @@ import {
 // import logoReeddi from '@/images/logos/reeddi.png'
 import { type ArticleWithLink } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
-import { appImages, articles, profileDetails, socialLinks } from '@/config'
+import { ResumeLink, appImages, articles, profileDetails, socialLinks } from '@/config'
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -93,12 +94,13 @@ function Article({ article }: { article: ArticleWithLink }) {
 
 function SocialLink({
   icon: Icon,
+  className,
   ...props
 }: React.ComponentPropsWithoutRef<typeof Link> & {
   icon: React.ComponentType<{ className?: string }>
 }) {
   return (
-    <Link className="group -m-1 p-1" {...props}>
+    <Link className={clsx("group -m-1 p-1", className)} {...props}>
       <Icon className="h-6 w-6 fill-zinc-500 transition group-hover:fill-zinc-600 dark:fill-zinc-400 dark:group-hover:fill-zinc-300" />
     </Link>
   )
@@ -188,8 +190,7 @@ function Role({ role }: { role: Role }) {
 const {icons} =  appImages
 
 function Resume() {
-  const resumeLink =
-    'https://drive.google.com/file/d/1EYVbbH-a073E_6OmZm24BDlrXN044Bme/view?usp=sharing'
+
   let resume: Array<Role> = [
     {
       company: 'Alphaday',
@@ -229,7 +230,7 @@ function Resume() {
         ))}
       </ol>
       <Button
-        href={resumeLink}
+        href={ResumeLink}
         target="_blank"
         variant="secondary"
         className="group mt-6 w-full"
@@ -291,9 +292,9 @@ export default async function Home() {
             Software Engineer, and amateur UX Designer.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m {profileDetails.firstName}, a software engineer based in Nigeria. I love building
-            delightful user interfaces and digital experiences that empower
-            regular people do more.
+            I’m {profileDetails.firstName}, a software engineer based in
+            Nigeria. I love building delightful user interfaces and digital
+            experiences that empower regular people do more.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -302,14 +303,20 @@ export default async function Home() {
               icon={TwitterIcon}
             />
             <SocialLink
-              href={socialLinks.github}
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
+              href={socialLinks.instagram}
+              aria-label="Follow on Instagram"
+              icon={InstagramIcon}
             />
             <SocialLink
               href={socialLinks.linkedIn}
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
+            />
+            <SocialLink
+              href={socialLinks.substack}
+              aria-label="Follow on Substack"
+              className="[&_svg]:mx-1 [&_svg]:w-4"
+              icon={SubstackIcon}
             />
           </div>
         </div>

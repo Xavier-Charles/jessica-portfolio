@@ -5,9 +5,9 @@ import clsx from 'clsx'
 
 import { Container } from '@/components/Container'
 import {
-  GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
+  SubstackIcon,
   TwitterIcon,
 } from '@/components/SocialIcons'
 // import potraitImage from '@/images/portrait.jpg'
@@ -52,8 +52,7 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 
 export const metadata: Metadata = {
   title: 'About',
-  description:
-    `I’m ${profileDetails.name}. I live in New York City, where I design the future.`,
+  description: `I’m ${profileDetails.name}. I live in New York City, where I design the future.`,
 }
 
 export default function About() {
@@ -69,7 +68,7 @@ export default function About() {
               alt={potraitImage.alt}
               sizes="(min-width: 1024px) 32rem, 20rem"
               className="aspect-square rotate-3 rounded-2xl bg-zinc-100 object-cover dark:bg-zinc-800"
-              />
+            />
           </div>
         </div>
         <div className="lg:order-first lg:row-span-2">
@@ -106,11 +105,11 @@ export default function About() {
               Follow on Twitter
             </SocialLink>
             <SocialLink
-              href={socialLinks.github}
-              icon={GitHubIcon}
+              href={socialLinks.instagram}
+              icon={InstagramIcon}
               className="mt-4"
             >
-              Follow on GitHub
+              Follow on Instagram
             </SocialLink>
             <SocialLink
               href={socialLinks.linkedIn}
@@ -118,6 +117,13 @@ export default function About() {
               className="mt-4"
             >
               Connect on LinkedIn
+            </SocialLink>
+            <SocialLink
+              href={socialLinks.substack}
+              icon={SubstackIcon}
+              className="mt-4 [&_svg]:w-4 [&_svg]:mx-1"
+            >
+              Follow on Substack
             </SocialLink>
             <SocialLink
               href={socialLinks.mail}

@@ -1,24 +1,25 @@
 export const socialLinks = {
-  twitter: 'https://twitter.com/Chadnium',
-  linkedIn: 'https://linkedin.com/charles-nwankwo-01',
-  github: 'https://github.com/Xavier-Charles',
-  mail: 'mailto:charles@alphaday.com',
+  twitter: 'https://twitter.com/AjuonumaJessica',
+  linkedIn: 'http://www.linkedin.com/in/jessicaajuonuma',
+  substack: 'https://substack.com/@jessicaajuonuma',
+  instagram: 'https://www.instagram.com/iamjessicaclair/',
+  mail: 'mailto:jessicaajuonuma3@gmail.com',
 }
 
 export const socialHandles = {
-  twitter: 'Chadnium',
-  linkedIn: 'charles-nwankwo-01',
-  github: 'Xavier-Charles',
-  mail: 'charles@alphaday.com',
+  twitter: 'AjuonumaJessica',
+  linkedIn: 'jessicaajuonuma',
+  instagram: '@iamjessicaclair',
+  mail: 'jessicaajuonuma3@gmail.com',
 }
 
 export const profileDetails = {
-  name: 'Charles Nwankwo',
-  firstName: 'Charles',
-  lastName: 'Nwankwo',
-  title: 'Software Engineer',
+  name: 'Jessica Ajuonuma',
+  firstName: 'Jessica',
+  lastName: 'Ajuonuma',
+  title: 'Digital Marketer',
   location: 'Lagos, Nigeria',
-  url: 'https://charlesnwankwo.com',
+  url: 'https://jessicaclair.me',
 }
 
 export const articles = [
@@ -28,7 +29,7 @@ export const articles = [
       'A guide to the skills and mindsets you need to level up as an engineer.',
     date: '2023-12-05',
     link: 'https://www.linkedin.com/pulse/becoming-senior-engineer-charles-nwankwo-7k3oc%3F/',
-    author: 'Charles Nwankwo',
+    author: `${profileDetails.name}`,
   },
   {
     title: 'All Product Managers have to know how to code',
@@ -36,7 +37,7 @@ export const articles = [
       "Is a coding a requirement for Product Managers? Let's find out.",
     date: '2020-07-22',
     link: 'https://www.linkedin.com/pulse/all-product-managers-have-know-how-code-charles-nwankwo/',
-    author: 'Charles Nwankwo',
+    author: `${profileDetails.name}`,
   },
 ]
 
@@ -45,32 +46,32 @@ export const articleSubText = `All of my long-form thoughts on programming, lead
 export const appImages = {
   photos: {
     image1: {
-      src: 'https://i.imgur.com/QLWdkGQ.png',
-      alt: 'Charles Nwankwo on a hill',
+      src: 'https://i.imgur.com/HwwppEE.png',
+      alt: `${profileDetails.name} at the Meta Digital Marketing Associate program graduating ceremony`,
     },
     image2: {
-      src: 'https://i.imgur.com/PwvkFjt.png',
-      alt: 'Charles Nwanko at a party',
+      src: 'https://i.imgur.com/fdwVYCN.png',
+      alt: `${profileDetails.name} at a photo shoot`,
     },
     image3: {
-      src: 'https://i.imgur.com/FODzCTq.png',
-      alt: 'Charles Nwankwo convocation picture',
+      src: 'https://i.imgur.com/phZv03y.png',
+      alt: `${profileDetails.name} at an NYSC camp`,
     },
     image4: {
-      src: 'https://i.imgur.com/T8NmqxD.png',
-      alt: 'Charles Nwankwo at a reunion',
+      src: 'https://i.imgur.com/OGBNUvx.png',
+      alt: `${profileDetails.name} at work`,
     },
     image5: {
-      src: 'https://i.imgur.com/g8JCygB.png',
-      alt: 'Charles Nwankwo at an NYSC camp',
+      src: 'https://i.imgur.com/SdXru5F.png',
+      alt: `${profileDetails.name} at a work`,
     },
     avatar: {
-      src: 'https://i.imgur.com/41OApzE.png',
-      alt: 'Charles Nwankwo',
+      src: 'https://i.imgur.com/DmxImWA.png',
+      alt: `${profileDetails.name}`,
     },
     potrait: {
-      src: 'https://i.imgur.com/QfPwDuv.png',
-      alt: 'Charles Nwankwo',
+      src: 'https://i.imgur.com/DmxImWA.png',
+      alt: `${profileDetails.name}`,
     },
   },
 
@@ -105,3 +106,5 @@ export const appImages = {
     },
   },
 }
+
+export const ResumeLink = 'https://drive.google.com/file/d/1EYVbbH-a073E_6OmZm24BDlrXN044Bme/view?usp=sharing'
