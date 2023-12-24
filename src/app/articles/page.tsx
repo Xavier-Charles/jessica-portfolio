@@ -4,7 +4,7 @@ import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import { type ArticleWithLink } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
-import { articles } from '@/config'
+import { ArticlePageDetails, articles } from '@/config'
 
 
 function Article({ article }: { article: ArticleWithLink }) {
@@ -46,8 +46,8 @@ export default async function ArticlesIndex() {
 
   return (
     <SimpleLayout
-      title="Writing on some of the interesting things I learn in Software Development and User Interface design."
-      intro="All of my long-form thoughts on programming, leadership, UI design, and more, collected in chronological order."
+      title={ArticlePageDetails.title}
+      intro={ArticlePageDetails.subtext}
     >
       <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
         <div className="flex max-w-3xl flex-col space-y-16">

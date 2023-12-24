@@ -9,9 +9,9 @@ import { profileDetails } from '@/config'
 export const metadata: Metadata = {
   title: {
     template: `%s - ${profileDetails.name}`,
-    default: `${profileDetails.name} - Software designer, founder, and amateur astronaut`,
+    default: `${profileDetails.name} - ${profileDetails.fullTitle}`,
   },
-  description: `I’m ${profileDetails.firstName}, a software engineer based in Nigeria. I love building delightful user interfaces and digital experiences that empower regular people do more.`,
+  description: profileDetails.bio,
   alternates: {
     types: {
       'application/rss+xml': `${profileDetails.url}/feed.xml`,

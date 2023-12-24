@@ -10,7 +10,6 @@ import {
   SubstackIcon,
   TwitterIcon,
 } from '@/components/SocialIcons'
-// import potraitImage from '@/images/portrait.jpg'
 import { appImages, profileDetails, socialHandles, socialLinks } from '@/config'
 
 const potraitImage = appImages.photos.potrait
@@ -73,29 +72,61 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            I’m {profileDetails.name}. I live in Lagos, Nigeria, where I dev &
-            design.
+            I’m {profileDetails.name}. I live in Lagos, Nigeria, where I write.
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-              I’ve love making things, beautiful and useful things. For as long
-              as I can remember, it's always been exciting to figure out how
-              things work. I've always been fascinated electronics and
-              computers. But it would take until January, 2018 to save enough to
-              buy my very first laptop. I cried when I got it. I was so happy.
+              In the last five years of my life, I have put myself out there a
+              lot and I'd like to use this opportunity to toot my own horn.
+              Before I do that, I want to tell you a story.
             </p>
             <p>
-              From then on,I spent the next few years learning everything I
-              could about Data Analysis, Machine Learning, Mobile Development,
-              Content Writing, Web Development, Product Management, and Graphic
-              Design and more. Yeah I tried everything. I had to make up for the
-              lost years. fter this period of extensive exploration, I knew I
-              wanted to be a developer.
+              I was given a project to handle recently by a youth group. I
+              drafted a powerful proposal that was accepted everywhere. I was
+              pumped. My team was doing the work. However, when the time came to
+              execute our proposal, everyone was too occupied and the rooms that
+              need to open up kept telling me "Nos!!!" I became devastated. I
+              did not get a good rest for weeks, I felt like a failure. But I
+              didn't stop until I hacked it. I hacked it. Yep! I decided to toot
+              my horn the day after I solved my problem because it made me
+              realise that I am a problem-solver before I am anything else.
             </p>
             <p>
-              Today, I’m a developer at Alphaday, where we’re developing the
-              ultimate crypto dashboard for staying up to date with all things
-              crypto and interacting with your favorite DApps.
+              I am a digital marketer and skilled content writer with a passion
+              for creating engaging and impactful online experiences. With three
+              years of professional experience in writing and six months of
+              hands-on involvement in digital marketing, I bring a unique blend
+              of creativity, strategic thinking, and analytical skills to drive
+              results.
+            </p>
+            <p>
+              As a content writer, I have honed my ability to craft compelling
+              and persuasive copy across various platforms, including blogs,
+              articles, social media posts, and website content. My writing
+              style is conversational and versatile, allowing me to effectively
+              communicate with my audience. Also, I have gained practical
+              experience in developing and implementing effective strategies to
+              enhance brand visibility, engage target audiences, and drive
+              organic traffic. I am well-versed in utilizing analytics tools to
+              track campaign performance, identify areas for improvement, and
+              optimize marketing efforts for maximum impact.
+            </p>
+            <p>
+              I am a lifelong learner and stay abreast of the latest trends and
+              best practices in digital marketing and content creation. I hold a
+              bachelor's degree in International Studies and Diplomacy where I
+              graduated as the second-best graduating student in a class of over
+              300 students. I am also an active volunteer who has engaged in
+              various volunteering activities. I regularly participate in
+              professional development programs to enhance my skills and
+              knowledge and to put my best foot forward.
+            </p>
+            <p>
+              If you're looking for a dedicated digital marketer and content
+              writer who combines creativity, analytical thinking, and a
+              results-driven mindset, I am confident that I can contribute to
+              your organization's growth and success. Let's connect and explore
+              how we can collaborate to achieve your marketing objectives.
             </p>
           </div>
         </div>
@@ -121,7 +152,7 @@ export default function About() {
             <SocialLink
               href={socialLinks.substack}
               icon={SubstackIcon}
-              className="mt-4 [&_svg]:w-4 [&_svg]:mx-1"
+              className="mt-4 [&_svg]:mx-1 [&_svg]:w-4"
             >
               Follow on Substack
             </SocialLink>

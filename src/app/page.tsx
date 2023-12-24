@@ -1,4 +1,4 @@
-import Image, { type ImageProps } from 'next/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 
@@ -11,12 +11,18 @@ import {
   SubstackIcon,
   TwitterIcon,
 } from '@/components/SocialIcons'
-// import logoHaulr from '@/images/logos/haulr.jpg'
-// import logoAlphaday from '@/images/logos/alphaday.svg'
-// import logoReeddi from '@/images/logos/reeddi.png'
+
 import { type ArticleWithLink } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
-import { ResumeLink, appImages, articles, profileDetails, socialLinks } from '@/config'
+import {
+  IRole,
+  ResumeLink,
+  appImages,
+  articles,
+  profileDetails,
+  ResumeDetails,
+  socialLinks,
+} from '@/config'
 
 function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -114,36 +120,32 @@ function Newsletter() {
     >
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <MailIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Stay up to date</span>
+        <span className="ml-3">Mirror Me Newsletter</span>
       </h2>
       <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
-        Get notified when I publish something new, and unsubscribe at any time.
+        {/* Get notified when I publish something new, and unsubscribe at any time. */}
+        Get notified when I publish sporadic, quirky newsletters – consider
+        yourself warned, bestie.
       </p>
       <div className="mt-6 flex">
-        <input
+        {/* <input
           type="email"
           placeholder="Email address"
           aria-label="Email address"
           required
           className="min-w-0 flex-auto appearance-none rounded-md border border-zinc-900/10 bg-white px-3 py-[calc(theme(spacing.2)-1px)] shadow-md shadow-zinc-800/5 placeholder:text-zinc-400 focus:border-teal-500 focus:outline-none focus:ring-4 focus:ring-teal-500/10 dark:border-zinc-700 dark:bg-zinc-700/[0.15] dark:text-zinc-200 dark:placeholder:text-zinc-500 dark:focus:border-teal-400 dark:focus:ring-teal-400/10 sm:text-sm"
-        />
-        <Button type="submit" className="ml-4 flex-none">
-          Join
+        /> */}
+        <Button href={profileDetails.newsletter} className="w-full !bg-orange-400 hover:!bg-orange-500 text-zinc-900">
+          Subscribe to Mirror Me
         </Button>
       </div>
     </form>
   )
 }
 
-interface Role {
-  company: string
-  title: string
-  logo: ImageProps['src']
-  start: string | { label: string; dateTime: string }
-  end: string | { label: string; dateTime: string }
-}
 
-function Role({ role }: { role: Role }) {
+
+function Role({ role }: { role: IRole }) {
   let startLabel =
     typeof role.start === 'string' ? role.start : role.start.label
   let startDate =
@@ -187,45 +189,16 @@ function Role({ role }: { role: Role }) {
   )
 }
 
-const {icons} =  appImages
-
 function Resume() {
-
-  let resume: Array<Role> = [
-    {
-      company: 'Alphaday',
-      title: 'Software Engineer',
-      logo: icons.alphaday.src,
-      start: '2021',
-      end: {
-        label: 'Present',
-        dateTime: new Date().getFullYear().toString(),
-      },
-    },
-    {
-      company: 'Reeddi',
-      title: 'Fullstack Developer',
-      logo: icons.reeddi.src,
-      start: '2021',
-      end: '2021',
-    },
-    {
-      company: 'Haulr',
-      title: 'Frontend Developer',
-      logo: icons.haulr.src,
-      start: '2020',
-      end: '2021',
-    },
-  ]
 
   return (
     <div className="rounded-2xl border border-zinc-100 p-6 dark:border-zinc-700/40">
       <h2 className="flex text-sm font-semibold text-zinc-900 dark:text-zinc-100">
         <BriefcaseIcon className="h-6 w-6 flex-none" />
-        <span className="ml-3">Work</span>
+        <span className="ml-3">Work Experience</span>
       </h2>
       <ol className="mt-6 space-y-4">
-        {resume.map((role, roleIndex) => (
+        {ResumeDetails.map((role, roleIndex) => (
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
@@ -281,7 +254,7 @@ function Photos() {
   )
 }
 
-const latestFiveArticles = articles.slice(0, 5)
+const latestFourArticles = articles.slice(0, 4)
 
 export default async function Home() {
   return (
@@ -289,12 +262,10 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl">
-            Software Engineer, and amateur UX Designer.
+           {profileDetails.fullTitle}
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            I’m {profileDetails.firstName}, a software engineer based in
-            Nigeria. I love building delightful user interfaces and digital
-            experiences that empower regular people do more.
+            {profileDetails.bio}
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
@@ -325,12 +296,12 @@ export default async function Home() {
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
           <div className="flex flex-col gap-16">
-            {latestFiveArticles.map((article) => (
+            {latestFourArticles.map((article) => (
               <Article key={article.link} article={article} />
             ))}
           </div>
           <div className="space-y-10 lg:pl-16 xl:pl-24">
-            {/* <Newsletter /> */}
+            <Newsletter />
             <Resume />
           </div>
         </div>
