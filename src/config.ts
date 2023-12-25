@@ -195,7 +195,7 @@ export const ResumeDetails: Array<IRole> = [
 ]
 
 export const ResumeLink =
-  'https://drive.google.com/file/d/1EYVbbH-a073E_6OmZm24BDlrXN044Bme/view?usp=sharing'
+  'https://drive.google.com/file/d/1bN1nK5qjJh-vu1lqrRVcNndqFmdd3lxh/view?usp=sharing'
 
 export const ArticlePageDetails = {
   title: 'I write on some of the things I find interesting.',
